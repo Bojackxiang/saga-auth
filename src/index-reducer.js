@@ -6,7 +6,7 @@ import signup from "./signup/reducer";
 const IndexReducer = combineReducers({
   form,
   client,
-  signup,
+  signUp: signup,
 });
 
 export default IndexReducer;
