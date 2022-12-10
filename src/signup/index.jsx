@@ -9,12 +9,13 @@ import { Link } from "react-router";
 const SignUp = (props) => {
   const {
     handleSubmit,
-    signUp: { requesting, successful, messages, errors }, // 从 本地state 中获取
+    signUp: { requesting, successful, messages, errors }, // 从 本地 state 中获取
     signupRequest, // 从本地 dispatch 中获取
   } = props;
 
   const submit = (values) => {
-    signupRequest(values);
+    const response = signupRequest(values);
+    console.log("response: ", response);
   };
 
   return (
