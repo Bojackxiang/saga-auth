@@ -14,8 +14,8 @@ const SignUp = (props) => {
   } = props;
 
   const submit = (values) => {
-    const response = signupRequest(values);
-    console.log("response: ", response);
+    // 下面的方法一定要 return 一个 {type: xxx}
+    signupRequest(values);
   };
 
   return (

@@ -19,7 +19,6 @@ function* signupFlow(action) {
     const response = yield call(signupApi, email, password); // 后面两个参数就是 pass in signUpAPI 的参数
     yield put({ type: SIGNUP_SUCCESS, response }); // put 是 dispatch 的部分，里面还有 type 和 payload
   } catch (error) {
-    console.log(error);
     yield put({ type: SIGNUP_ERROR, error }); // put 是 dispatch 的部分，里面还有 type 和 payload
   }
 }
@@ -27,8 +26,7 @@ function* signupFlow(action) {
 // 这个 watch 就是舰艇 SIGNUP_REQUESTING 的意思
 // 然后执行 signup flow
 function* signupWatcher() {
-  console.log("watcher1");
-  yield all([yield takeLatest(SIGNUP_REQUESTING, signupFlow)]);
+  yield yield takeLatest(SIGNUP_REQUESTING, signupFlow);
 }
 
 export default signupWatcher;

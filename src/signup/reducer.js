@@ -8,7 +8,6 @@ const initialState = {
 };
 
 const reducer = function signupReducer(state = initialState, action) {
-  console.log("action", action);
   switch (action.type) {
     case SIGNUP_REQUESTING:
       return {
